@@ -7,10 +7,11 @@ library(MASS) # For mvrnorm
 library(DT)   # For dataTableOutput
 library(MASS)
 library(shiny)
-library(reticulate)
+#library(reticulate)
 library(ggplot2)
 library(shinycssloaders)
 library(moments)
+library(ctgan)
 
 # Normal distribution dataset
 # Set seeds to reproduce results
@@ -194,12 +195,17 @@ server <- function(input, output, session) {
     num_points <- input$numDataPoints
     
     # set python env
-    python_path <- "python" 
-    
-    command_gan <- sprintf("%s /Users/WangP/Desktop/shiny/gan.py %s %d", python_path, file_path_gan, num_points)
+    python_path <- "python"
+
+    current_dir <- getwd()
+    python_script_path <- file.path(current_dir, "gan.py")
+
+    command_gan <- sprintf("%s %s %s %d", python_path, python_script_path, file_path_gan, num_points)
+
     system(command_gan)
-    
+
     synthetic_data_gan(read.csv("synthetic_data_gan.csv"))
+
     
     ################### more complex method
     mu <- colMeans(data)
