@@ -7,11 +7,10 @@ library(MASS) # For mvrnorm
 library(DT)   # For dataTableOutput
 library(MASS)
 library(shiny)
-#library(reticulate)
+library(reticulate)
 library(ggplot2)
 library(shinycssloaders)
 library(moments)
-library(ctgan)
 
 # Normal distribution dataset
 # Set seeds to reproduce results
