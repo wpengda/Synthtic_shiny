@@ -194,7 +194,7 @@ server <- function(input, output, session) {
     num_points <- input$numDataPoints
     
     # set python env
-    python_path <- "python"
+    python_path <- "python3"
 
     current_dir <- getwd()
     python_script_path <- file.path(current_dir, "gan.py")
