@@ -100,7 +100,7 @@ We change this to:
 python_path <- "C:/Users/anaconda3/envs/myenv/python.exe" 
 ```
 
-Remember we need chang **\** to **/**.
+Remember we need change \ to /.
 
 ## Step 4: Running the Shiny App in RStudio
 
