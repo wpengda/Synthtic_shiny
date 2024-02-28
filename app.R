@@ -5,7 +5,6 @@
 library(shinyjs)
 library(MASS) # For mvrnorm
 library(DT)   # For dataTableOutput
-library(MASS)
 library(shiny)
 library(reticulate)
 library(ggplot2)
@@ -195,7 +194,7 @@ server <- function(input, output, session) {
     
     # set python env
     python_path <- "python3"
-
+    
     current_dir <- getwd()
     python_script_path <- file.path(current_dir, "gan.py")
 
